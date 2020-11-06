@@ -1,0 +1,37 @@
+.NavBar {
+    background-color: black;
+}
+
+.banner {
+    overflow: hidden;
+    width: 100vw;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.nav1 {
+    background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    #bannerImg1 {
+        display: none;
+    }
+
+    #bannerImg2 {
+        width: 90vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+   #bannerImg2 {
+        display: none;
+    }
+
+    #bannerImg1 {
+        height: 150px;
+    }
+}
