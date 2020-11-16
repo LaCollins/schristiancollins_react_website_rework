@@ -20,7 +20,9 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Typography } from '@material-ui/core';
-import { Accordion, AccordionSummary, AccordianDetails } from '@material-ui/core';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
 
 const drawerWidth = 240;
 
@@ -61,6 +63,19 @@ const useStyles = makeStyles((theme) => ({
   dividerColor: {
     backgroundColor: 'darkgray',
   },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+  socials: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
+  },
+  smallSocials: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    }
+  }
 }));
 
 function ListItemLink(props) {
@@ -72,6 +87,25 @@ function NavBar(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [homeOpen, setHomeOpen] = React.useState(false);
+    const [musicOpen, setMusicOpen] = React.useState(false);
+    const [virtualOpen, setVirtualOpen] = React.useState(false);
+
+    const handleClick = (e) => {
+      if(e.target.parentNode.parentNode.id === 'home') {
+        setHomeOpen(!homeOpen);
+        setMusicOpen(false);
+        setVirtualOpen(false);
+      } else if(e.target.parentNode.parentNode.id === 'music') {
+        setMusicOpen(!musicOpen);
+        setHomeOpen(false);
+        setVirtualOpen(false);
+      } else if(e.target.parentNode.parentNode.id === 'virtualInstruments') {
+        setVirtualOpen(!virtualOpen);
+        setMusicOpen(false);
+        setHomeOpen(false);
+      }
+    };
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -84,15 +118,95 @@ function NavBar(props) {
             <br />
             <Divider classes={{root: classes.dividerColor}} />
             <List>
-                {['Home/Bio', 'Music', 'Virtual Instruments', 'Contact'].map((text, index) => (
-                    <ListItem button key={index}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+              <ListItem button key="home" onClick={handleClick} id="home">
+                <ListItemText primary="Home/Bio" />
+              </ListItem>
+              <Collapse in={homeOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="About Me" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="What's New" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Talents for Hire" />
+                </ListItem>
+              </List>
+            </Collapse>
+              <ListItem button key="music" onClick={handleClick} id="music">
+                <ListItemText primary="Music" />
+              </ListItem>
+              <Collapse in={musicOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Recordings-Original" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Recordings-Other" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Sheet Music-Original" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Sheet Music-Other" />
+                </ListItem>
+              </List>
+            </Collapse>
+            <ListItem button key="virtualInstruments" onClick={handleClick} id="virtualInstruments">
+                <ListItemText primary="Virtual Instruments" />
+              </ListItem>
+              <Collapse in={virtualOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="About Virtual Instruments" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="GeneralUser GS" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Guitar &amp; Bass" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Orchestral" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Percussion" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Virtue" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Miscellaneous" />
+                </ListItem>
+                <ListItem button className={classes.nested}>
+                  <ListItemText primary="Obsolete" />
+                </ListItem>
+              </List>
+            </Collapse>
+              <ListItem button key="contact">
+                <ListItemText primary="Contact" />
+              </ListItem>
+              <List classes={{ root: classes.smallSocials }} className="socials">
+                <ListItem>
+                  <div className="tinySocials d-flex row-wrap">
+                    <a href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
+                    <img src={yt} alt="youtube" className="mr-4" /></a>
+                    <a href="https://schristiancollins.wordpress.com/" target="_blank" rel="noreferrer">
+                    <img src={wp} alt="WordPress Blog" className="mr-4" /></a>
+                    <a href="https://www.facebook.com/schristiancollins" target="_blank" rel="noreferrer">
+                    <img src={fb} alt="facebook" className="mr-4" /></a>
+                    <a href="https://twitter.com/SChrisCollins" target="_blank" rel="noreferrer">
+                    <img src={tw} alt="twitter" className="mr-4" /></a>
+                    <a href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noreferrer">
+                    <img src={sc} alt="soundcloud" className="mr-3" /></a>
+                  </div>
+                </ListItem>
+              </List>
             </List>
             <div className="socials">
               <Divider classes={{root: classes.dividerColor}} />
-              <List>
+              <List classes={{ root: classes.socials }}>
                 <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
                   <img src={yt} alt="youtube" className="mr-2" /><ListItemText primary="YouTube"></ListItemText>
                 </ListItemLink>
