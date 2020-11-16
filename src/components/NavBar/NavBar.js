@@ -2,6 +2,11 @@ import React from 'react';
 import './NavBar.css';
 import title from './images/title.png';
 import keyboard from './images/keyboard.png';
+import fb from './images/logo-fb.png';
+import yt from './images/logo-youtube.png';
+import wp from './images/logo-wordpress.png';
+import tw from './images/logo-twitter.png';
+import sc from './images/logo-soundcloud.png';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -15,6 +20,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Typography } from '@material-ui/core';
+import { Accordion, AccordionSummary, AccordianDetails } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -52,8 +58,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  dividerColor: {
+    backgroundColor: 'darkgray',
+  },
 }));
 
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 
 function NavBar(props) {
     const { window } = props;
@@ -70,14 +82,34 @@ function NavBar(props) {
             <div className={classes.toolbar} />
             <br />
             <br />
-            <Divider />
+            <Divider classes={{root: classes.dividerColor}} />
             <List>
-                {['Home/Bio', 'Music', 'Virtual Instruments'].map((text, index) => (
-                    <ListItem button key={text}>
+                {['Home/Bio', 'Music', 'Virtual Instruments', 'Contact'].map((text, index) => (
+                    <ListItem button key={index}>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>
+            <div className="socials">
+              <Divider classes={{root: classes.dividerColor}} />
+              <List>
+                <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
+                  <img src={yt} alt="youtube" className="mr-2" /><ListItemText primary="YouTube"></ListItemText>
+                </ListItemLink>
+                <ListItemLink href="https://schristiancollins.wordpress.com/" target="_blank" rel="noreferrer">
+                  <img src={wp} alt="WordPress Blog" className="mr-2" /><ListItemText primary="WordPress (blog)"></ListItemText>
+                </ListItemLink>
+                <ListItemLink href="https://www.facebook.com/schristiancollins" target="_blank" rel="noreferrer">
+                  <img src={fb} alt="facebook" className="mr-2" /><ListItemText primary="Facebook"></ListItemText>
+                </ListItemLink>
+                <ListItemLink href="https://twitter.com/SChrisCollins" target="_blank" rel="noreferrer">
+                  <img src={tw} alt="twitter" className="mr-2" /><ListItemText primary="Twitter"></ListItemText>
+                </ListItemLink>
+                <ListItemLink href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noreferrer">
+                  <img src={sc} alt="soundcloud" className="mr-2" /><ListItemText primary="SoundCloud"></ListItemText>
+                </ListItemLink>
+              </List>
+            </div>
         </div>
     );
 
