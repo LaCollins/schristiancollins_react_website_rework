@@ -1,20 +1,16 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import NavBar from '../components/NavBar/NavBar';
-// import Dashboard from '../components/Dashboard/Dashboard';
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Dashboard from '../components/Dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="App container m0">
-      <Router>
-        <NavBar />
-      </Router>
-    </div>
+    <React.Fragment>
+      <div className="App container m0">
+        <CssBaseline />
+          <Dashboard />
+      </div>
+    </React.Fragment>
   );
 }
 
