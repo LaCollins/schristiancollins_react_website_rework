@@ -8,7 +8,7 @@ function App() {
     <React.Fragment>
       <div className="App container m0">
         <CssBaseline />
-        <Dashboard />
+          <Dashboard />
       </div>
     </React.Fragment>
   );

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
+import './Home.css';
 
 const styles = theme => ({
     button: {
@@ -17,7 +18,7 @@ const styles = theme => ({
   const FlatButtons = props => {
     const { classes } = props;
     return (
-      <div>
+      <div className="Home">
         <div>
           <Button
             variant="contained"

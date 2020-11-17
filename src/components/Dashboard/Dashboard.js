@@ -1,5 +1,6 @@
-import React, { useState, Fragment } from 'react';
-import { Router, Route, Link } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import './Dashboard.css';
 import title from './images/title.png';
@@ -10,7 +11,6 @@ import wp from './images/logo-wordpress.png';
 import tw from './images/logo-twitter.png';
 import sc from './images/logo-soundcloud.png';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
@@ -21,10 +21,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Typography } from '@material-ui/core';
 import Collapse from '@material-ui/core/Collapse';
 
+import Routes from '../../App/Routes';
+
 const drawerWidth = 240;
+const history = createBrowserHistory();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -112,21 +114,34 @@ function Dashboard(props) {
     }
 
     const drawer = (
+      <Fragment>
         <div>
             <div className={classes.toolbar} />
             <br />
             <br />
             <Divider classes={{root: classes.dividerColor}} />
             <List>
-              <ListItem button key="home" onClick={handleClick} id="home">
-                <ListItemText primary="Home/Bio" />
+              <ListItem
+                button
+                key="home"
+                onClick={handleClick}
+                id="home">
+                <ListItemText primary="Home" />
               </ListItem>
               <Collapse in={homeOpen} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/"
+                  className={classes.nested}>
                   <ListItemText primary="About Me" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/whatsnew"
+                  className={classes.nested}>
                   <ListItemText primary="What's New" />
                 </ListItem>
                 <ListItem button className={classes.nested}>
@@ -225,29 +240,30 @@ function Dashboard(props) {
               </List>
             </div>
         </div>
+        </Fragment>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
         return (
+        <Router history={history}>
         <div className={classes.root}>
-                <CssBaseline />
-                <AppBar position="fixed" className={classes.appBar}>
-                    <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        className={classes.menuButton}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <img src={title} alt="S.Christian Collins" className="title"/>
-                    <img src={keyboard} alt="keyboard" className="keyboard"/>
-                    </Toolbar>
-                </AppBar>
-                <nav className={classes.drawer} aria-label="mailbox folders">
+          <AppBar position="fixed" className={classes.appBar}>
+              <Toolbar>
+              <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  className={classes.menuButton}
+              >
+                  <MenuIcon />
+              </IconButton>
+              <img src={title} alt="S.Christian Collins" className="title"/>
+              <img src={keyboard} alt="keyboard" className="keyboard"/>
+              </Toolbar>
+          </AppBar>
+          <nav className={classes.drawer} aria-label="menu">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
             <Hidden smUp implementation="css">
               <Drawer
@@ -280,31 +296,10 @@ function Dashboard(props) {
           </nav>
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-              facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-              arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-              donec massa sapien faucibus et molestie ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
+            <Routes />
           </main>
-        </div>
+          </div>
+        </Router>
         )
 }
 
