@@ -1,5 +1,7 @@
-import React from 'react';
-import './NavBar.css';
+import React, { useState, Fragment } from 'react';
+import { Router, Route, Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import './Dashboard.css';
 import title from './images/title.png';
 import keyboard from './images/keyboard.png';
 import fb from './images/logo-fb.png';
@@ -20,8 +22,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Typography } from '@material-ui/core';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 
 const drawerWidth = 240;
@@ -82,7 +82,7 @@ function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
 
-function NavBar(props) {
+function Dashboard(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
@@ -308,4 +308,4 @@ function NavBar(props) {
         )
 }
 
-export default NavBar;
+export default Dashboard;
