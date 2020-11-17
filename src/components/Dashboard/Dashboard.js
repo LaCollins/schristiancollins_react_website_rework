@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
   },
   dividerColor: {
     backgroundColor: 'darkgray',
@@ -267,7 +267,7 @@ function Dashboard(props) {
               <img src={keyboard} alt="keyboard" className="keyboard"/>
               </Toolbar>
           </AppBar>
-          <nav className={classes.drawer} aria-label="menu">
+          <nav className={classes.drawer} aria-label="menu" id="mobileDrawer">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
             <Hidden smUp implementation="css">
               <Drawer
@@ -299,7 +299,6 @@ function Dashboard(props) {
             </Hidden>
           </nav>
           <main className={classes.content}>
-            <div className={classes.toolbar} />
             <Routes />
           </main>
           </div>

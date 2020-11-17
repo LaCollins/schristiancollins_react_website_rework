@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url(//db.onlinewebfonts.com/c/47f9ef1694f83081f3916f938915af8d?family=Linux+Biolinum);
+
+@font-face {font-family: "Linux";
+           src: url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.eot");
+           src: url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.eot?#iefix")
+           format("embedded-opentype"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.woff2")
+           format("woff2"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.woff")
+           format("woff"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.ttf")
+           format("truetype"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.svg#Linux Biolinum")
+           format("svg"); }
 
 body {
   margin: 0;
@@ -11,7 +20,7 @@ body {
   background-color: black !important;
   background-image: url('./assets/images/bg-curtains.jpg');
 
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Linux' !important;
 }
 
 code {
@@ -24,4 +33,22 @@ code {
     background-image: url('./assets/images/bg-curtains-mobile.jpg');
     background-size: cover;
   }
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+  color: #eba6a6;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #cc7c7c;
+}
+
+p {
+  font-size: 1em;
 }
