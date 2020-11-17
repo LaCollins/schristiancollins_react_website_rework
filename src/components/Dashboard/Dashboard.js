@@ -1,16 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import './Dashboard.css';
-import title from './images/title.png';
-import keyboard from './images/keyboard.png';
-import fb from './images/logo-fb.png';
-import yt from './images/logo-youtube.png';
-import wp from './images/logo-wordpress.png';
-import tw from './images/logo-twitter.png';
-import sc from './images/logo-soundcloud.png';
 import AppBar from '@material-ui/core/AppBar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Collapse from '@material-ui/core/Collapse';
+import { createBrowserHistory } from 'history';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
@@ -21,7 +14,18 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Collapse from '@material-ui/core/Collapse';
+
+//images
+import title from './images/title.png';
+import keyboard from './images/keyboard.png';
+import fb from './images/logo-fb.png';
+import yt from './images/logo-youtube.png';
+import wp from './images/logo-wordpress.png';
+import tw from './images/logo-twitter.png';
+import sc from './images/logo-soundcloud.png';
+
+//stylesheet
+import './Dashboard.css';
 
 import Routes from '../../App/Routes';
 
