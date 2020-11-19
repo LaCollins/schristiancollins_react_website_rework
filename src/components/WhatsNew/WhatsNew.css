@@ -1,4 +1,30 @@
 .WhatsNew {
-    margin-top: 75px;
+    margin-top: 125px;
     color: white;
+    text-align: center;
+    background-color: rgb(59, 46, 46, .6);
+    border-radius: 10px;
+    border: darkgray solid 1px;
+    padding: 25px;
+    font-size: medium;
 }
+
+.newText a:link {
+    color:#508ED8;
+    text-decoration:none;
+  }
+  
+.newText a:visited {
+    color:#8E79A5;
+    text-decoration:none;
+  }
+  
+.newText a:hover {
+    color:#7EBAFF;
+    text-decoration:none;
+  }
+  
+.newText a:active {
+    color:#ffffff;
+    text-decoration:none;
+  }
