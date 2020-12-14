@@ -163,7 +163,11 @@ function Dashboard(props) {
               </ListItem>
               <Collapse in={musicOpen} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+              <ListItem
+                  button
+                  component={Link}
+                  to="/compositions"
+                  className={classes.nested}>
                   <ListItemText primary="Recordings-Original" />
                 </ListItem>
                 <ListItem button className={classes.nested}>
