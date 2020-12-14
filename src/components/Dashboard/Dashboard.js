@@ -14,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import MailIcon from '@material-ui/icons/Mail';
 
 //images
 import title from './images/title.png';
@@ -148,7 +149,11 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="What's New" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/talents"
+                  className={classes.nested}>
                   <ListItemText primary="Talents for Hire" />
                 </ListItem>
               </List>
@@ -203,20 +208,18 @@ function Dashboard(props) {
                 </ListItem>
               </List>
             </Collapse>
-              <ListItem button key="contact">
-                <ListItemText primary="Contact" />
-              </ListItem>
               <List classes={{ root: classes.smallSocials }} className="socials">
                 <ListItem>
                   <div className="tinySocials d-flex row-wrap">
+                    <a href="mailto:s_chriscollins@hotmail.com" className="mr-3"><MailIcon /></a>
                     <a href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
-                    <img src={yt} alt="youtube" className="mr-4" /></a>
+                    <img src={yt} alt="youtube" className="mr-3" /></a>
                     <a href="https://schristiancollins.wordpress.com/" target="_blank" rel="noreferrer">
-                    <img src={wp} alt="WordPress Blog" className="mr-4" /></a>
+                    <img src={wp} alt="WordPress Blog" className="mr-3" /></a>
                     <a href="https://www.facebook.com/schristiancollins" target="_blank" rel="noreferrer">
-                    <img src={fb} alt="facebook" className="mr-4" /></a>
+                    <img src={fb} alt="facebook" className="mr-3" /></a>
                     <a href="https://twitter.com/SChrisCollins" target="_blank" rel="noreferrer">
-                    <img src={tw} alt="twitter" className="mr-4" /></a>
+                    <img src={tw} alt="twitter" className="mr-3" /></a>
                     <a href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noreferrer">
                     <img src={sc} alt="soundcloud" className="mr-3" /></a>
                   </div>
@@ -226,6 +229,8 @@ function Dashboard(props) {
             <div className="socials">
               <Divider classes={{root: classes.dividerColor}} />
               <List classes={{ root: classes.socials }}>
+                <ListItemLink href="mailto:s_chriscollins@hotmail.com">
+                  <MailIcon className="mr-2" /><ListItemText primary="Contact"></ListItemText></ListItemLink>
                 <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
                   <img src={yt} alt="youtube" className="mr-2" /><ListItemText primary="YouTube"></ListItemText>
                 </ListItemLink>
