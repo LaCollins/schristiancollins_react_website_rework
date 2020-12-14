@@ -19,6 +19,9 @@ import thumbelinatadpoles from '../../assets/music/S_Christian_Collins--Thumbeli
 import skyrunner from '../../assets/music/S_Christian_Collins--Sky_Runner.mp3';
 import prelude from '../../assets/music/S_Christian_Collins--Op16-No1--Prelude.mp3';
 import crystalrain from '../../assets/music/S_Christian_Collins--Op16-No2--Crystal_Rain.mp3';
+import whenhespeaks from '../../assets/music/S_Christian_Collins--When_He_Speaks.mp3';
+import ponies from '../../assets/music/S_Christian_Collins--The_Ponies_are_Loose.mp3';
+import thegift from '../../assets/music/S_Christian_Collins--The_Gift.mp3';
 
 const Accordion = withStyles({
     root: {
@@ -243,7 +246,49 @@ const Accordion = withStyles({
                 <iframe title="Nocturne" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F108995805&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false"></iframe>
                 <p>A piano piece I wrote for my sister for Christmas 2012. As part of my NAMM demo for Acoustica, I added some strings backing as well. The strings don't always fit as well as I'd like, but this piece was conceived solely as a solo piano work so it probably works best as such. In the original piano version, the thunder effect is created by rumbling the lowest strings on the piano. At some point I'll try to get a recording of this on a real grand so I can perform all of the hand-on-string effects that are supposed to be in there. The second half of this song is based on a short improv I did in 1997 called "Dream", which was available on this site previously.</p>
               <Divider className="mb-3" />
-              
+                <h4><i>Neo-Baroque Suite <span className="date">(2015)</span></i></h4>
+                <p><iframe title="Neo-Baroque Suite" width="560" height="315" src="https://www.youtube.com/embed/K9ipZp60aWQ?theme=light" frameborder="0" allowfullscreen></iframe></p>
+                <p>The premiere performance of <i>Neo-Baroque Suite</i> for harpsichord. This is a work in progress, as I've only written two movements so far. Performed live on the <a href="http://www.fusmadison.org/musicale" target="_blank" rel="noreferrer">Friday Musicale</a>, 2/13/2015 at the First Unitarian Society of Madison, WI.</p>
+              <Divider className="mb-3" />
+                <h4><i>When He Speaks <span className="date">(1999)</span></i></h4>
+                <p><audio controls="controls" preload="none">
+                  <source src="https://www.dropbox.com/s/ojbd658cm3lczm1/S_Christian_Collins--When_He_Speaks.ogg?dl=1" type="audio/ogg" />
+                  <source src="https://www.dropbox.com/s/9ob91rsmf6m6100/S_Christian_Collins--When_He_Speaks.mp3?dl=1" type="audio/mp3" />
+                  Your browser does not support embedded audio.
+                </audio>
+                <br /><span className="download"><a href={whenhespeaks} download="S. Christian Collins - When He Speaks.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank">Pianissimo</a></span></p>
+
+                <p>I wrote this song as inspiration for my sister when she was going
+                through a difficult decision in her life. The melody, with it's
+                echoes at different octaves, represents walking with God as He guides
+                a person through life's twists and turns.</p>
+              <Divider className="mb-3" />
+              <h4><i>The Ponies Are Loose <span className="date">(1988)</span></i></h4>
+              <p><audio controls="controls" preload="none">
+              <source src="https://www.dropbox.com/s/vbxbjjw9ywrvmm0/S_Christian_Collins--The_Ponies_are_Loose.ogg?dl=1" type="audio/ogg" />
+              <source src="https://www.dropbox.com/s/wuddc0cmew8umzj/S_Christian_Collins--The_Ponies_are_Loose.mp3?dl=1" type="audio/mp3" />
+              Your browser does not support embedded audio.
+              </audio>
+              <br />
+              <span className="download"><a href={ponies} download="S. Christian Collins - The Ponies are Loose.mp3">download</a> | sheet music coming soon</span></p>
+
+              <p>I wrote this rag at age nine, a time when I was obsessed with
+              Scott Joplin. I submitted it to the WMTA composition contest but
+              was degraded by the judge because the piece was “not in ragtime
+              form.” If it's not ragtime form, then neither are <i>The Maple Leaf Rag</i>, <i>The Entertainer</i> and many other Joplin favorites.</p>
+            <Divider className="mb-3" />
+              <h4><i>The Gift <span className="date">(2000)</span></i></h4>
+              <p><audio controls="controls" preload="none">
+              <source src="https://www.dropbox.com/s/nll2lw65gt825cr/S_Christian_Collins--The_Gift.ogg?dl=1" type="audio/ogg" />
+              <source src="https://www.dropbox.com/s/1xlwnxq5jx9248i/S_Christian_Collins--The_Gift.mp3?dl=1" type="audio/mp3" />
+              Your browser does not support embedded audio.
+              </audio>
+              <br />
+              <span className="download"><a href={thegift} download="S. Christian Collins - The Gift.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank">Pianissimo</a></span></p>
+
+              <p>When I wrote this song, I didn't really think much of it. My
+              composition professor really liked it, though, so I'm putting it on
+              this page for that reason alone.</p>
               </div>
             </AccordionDetails>
           </Accordion>
