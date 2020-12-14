@@ -256,7 +256,7 @@ const Accordion = withStyles({
                   <source src="https://www.dropbox.com/s/9ob91rsmf6m6100/S_Christian_Collins--When_He_Speaks.mp3?dl=1" type="audio/mp3" />
                   Your browser does not support embedded audio.
                 </audio>
-                <br /><span className="download"><a href={whenhespeaks} download="S. Christian Collins - When He Speaks.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank">Pianissimo</a></span></p>
+                <br /><span className="download"><a href={whenhespeaks} download="S. Christian Collins - When He Speaks.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank" rel="noreferrer">Pianissimo</a></span></p>
 
                 <p>I wrote this song as inspiration for my sister when she was going
                 through a difficult decision in her life. The melody, with it's
@@ -284,7 +284,7 @@ const Accordion = withStyles({
               Your browser does not support embedded audio.
               </audio>
               <br />
-              <span className="download"><a href={thegift} download="S. Christian Collins - The Gift.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank">Pianissimo</a></span></p>
+              <span className="download"><a href={thegift} download="S. Christian Collins - The Gift.mp3">download</a> | sheet music coming soon | recorded using <a href="http://www.acoustica.com/pianissimo/" target="_blank" rel="noreferrer">Pianissimo</a></span></p>
 
               <p>When I wrote this song, I didn't really think much of it. My
               composition professor really liked it, though, so I'm putting it on
