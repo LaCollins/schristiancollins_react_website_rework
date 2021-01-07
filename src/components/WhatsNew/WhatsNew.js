@@ -10,7 +10,7 @@ function WhatsNew() {
     <div className="WhatsNew">
       <h1>What's New</h1>
         {data.reverse().map((item) => (
-        <div className="text-left newText">
+        <div className="text-left newText" key={item.date}>
           <h2>{item.date}</h2>
           <p dangerouslySetInnerHTML={{__html: item.information}}></p>
         </div>

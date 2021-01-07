@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   smallSocials: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     }
   }
@@ -118,6 +118,10 @@ function Dashboard(props) {
         setMobileOpen(!mobileOpen);
     }
 
+    const closeDrawer = () => {
+      setMobileOpen(false);
+    }
+
     const drawer = (
       <Fragment>
         <div>
@@ -137,6 +141,7 @@ function Dashboard(props) {
               <List component="div" disablePadding>
                 <ListItem
                   button
+                  onClick={closeDrawer}
                   component={Link}
                   to="/"
                   className={classes.nested}>
@@ -144,6 +149,7 @@ function Dashboard(props) {
                 </ListItem>
                 <ListItem
                   button
+                  onClick={closeDrawer}
                   component={Link}
                   to="/whatsnew"
                   className={classes.nested}>
@@ -151,6 +157,7 @@ function Dashboard(props) {
                 </ListItem>
                 <ListItem
                   button
+                  onClick={closeDrawer}
                   component={Link}
                   to="/talents"
                   className={classes.nested}>
@@ -165,6 +172,7 @@ function Dashboard(props) {
               <List component="div" disablePadding>
               <ListItem
                   button
+                  onClick={closeDrawer}
                   component={Link}
                   to="/compositions"
                   className={classes.nested}>
