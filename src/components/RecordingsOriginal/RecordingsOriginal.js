@@ -67,7 +67,7 @@ const Accordion = withStyles({
   }))(MuiAccordionDetails);
   
   const OriginalRecordings = () => {
-    const [expanded, setExpanded] = React.useState('panel1');
+    const [expanded, setExpanded] = React.useState('');
   
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
@@ -82,8 +82,20 @@ const Accordion = withStyles({
             <AccordionDetails>
                 <div className="newText text-left">
                     <h4><i>King of Lizards <span className="date">(2012)</span></i></h4>
-                    <p><iframe title="King of Lizards" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/106536381&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+                    <iframe
+                      title="King of the Lizards"
+                      width="100%"
+                      height="166"
+                      scrolling="no"
+                      frameBorder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/106536381&color=%2300bfff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                      <div className="soundCloud d-flex row wrap">
+                        <a href="https://soundcloud.com/s-christian-collins" title="S. Christian Collins" target="_blank" rel="noreferrer" className="soundCloud-userName">S. Christian Collins</a> · 
+                        <a href="https://soundcloud.com/s-christian-collins/modemixer-king-of-lizards" title="modemixer - King Of Lizards" target="_blank" rel="noreferrer" className="soundCloud-userName">modemixer - King Of Lizards</a>
+                      </div>
                     <br />
+                    <p>
                     <span className="download"><a href="http://modemixer.bandcamp.com/" target="_blank" rel="noreferrer">download</a></span></p>
                     <p>Doskpop! Inspired by the tracker music of Gustaf Grefberg (Lizardking). Made in Mixcraft 6 Pro Studio using almost entirely built-in synths and effects originally as a Mixcraft demo for NAMM 2012. Finally remastered in August 2013.</p>
                 <Divider className="mb-3" />
@@ -98,9 +110,20 @@ const Accordion = withStyles({
                     <p>This track was written as a demo for Acoustica to show off the new synths included with <a href="http://www.acoustica.com/mixcraft-pro-studio/" target="_blank" rel="noreferrer">Mixcraft Pro Studio 5</a>. <i>Blade's Edge</i> is a Blade Runner-esque composition that uses Gunnar Ekornas' fabulous <a href="http://www.memorymoon.com/me80.htm" target="_blank" rel="noreferrer">ME80 virtual synthesizer</a>, which emulates the famous Yamaha CS80 synthesizer that Vangelis used in the 80's to create the legendary Blade Runner soundtrack.</p>
                 <Divider className="mb-3" />
                     <h4><i>Fast Taxi <span className="date">(2010)</span></i></h4>
-                    <p><iframe title="Fast Taxi" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150058706&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+                    <iframe
+                      title="Fast Taxi"
+                      width="100%"
+                      height="166"
+                      scrolling="no"
+                      frameBorder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150058706&color=%2300bfff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div className="soundCloud d-flex row wrap">
+                        <a href="https://soundcloud.com/s-christian-collins" title="S. Christian Collins" target="_blank" rel="noreferrer" className="soundCloud-userName">S. Christian Collins</a> · 
+                        <a href="https://soundcloud.com/s-christian-collins/modemixer-fast-taxi-2014-remaster" title="modemixer - Fast Taxi (2014 Remaster - Rev B1)" target="_blank" rel="noreferrer" className="soundCloud-userName">modemixer - Fast Taxi (2014 Remaster - Rev B1)</a>
+                    </div>
                     <br />
-                    <span className="download"><a href="http://modemixer.bandcamp.com/track/fast-taxi-2014-remaster" target="_blank" rel="noreferrer">download</a></span></p>
+                    <p><span className="download"><a href="http://modemixer.bandcamp.com/track/fast-taxi-2014-remaster" target="_blank" rel="noreferrer">download</a></span></p>
                     <p>Created as a demo for <a href="http://www.acoustica.com/mixcraft/" target="_blank" rel="noreferrer">Acoustica Mixcraft 5</a>.</p>
                 <Divider className="mb-3" />
                     <h4><i>Fool Me Once <span className="date">(2008)</span></i></h4>
@@ -153,11 +176,24 @@ const Accordion = withStyles({
             <AccordionDetails>
               <div className="newText text-left">
                 <h4><i>Embers <span className="date">(2015)</span></i></h4>
-                <p><iframe title="Embers" width="560" height="315" src="https://www.youtube.com/embed/3LADJbl7Dao?theme=light" frameborder="0" allowfullscreen></iframe></p>
+                  <div className="youtubeContainer">
+                  <iframe
+                    title="Embers"
+                    src="https://www.youtube.com/embed/3LADJbl7Dao"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
+                  </div>
                 <p>Here is the premiere of <i>Embers</i>, cowritten by Charlene Adzima and myself for violin and harpsichord. Performed live on the <a href="http://www.fusmadison.org/musicale" target="_blank" rel="noreferrer">Friday Musicale</a>, 2/13/2015 at the First Unitarian Society of Madison, WI.</p>
             <Divider className="mb-3" />
                 <h4><i>Fair Flower <span className="date">(2014)</span></i></h4>
-                <p><iframe title="Fair Flower" width="560" height="315" src="https://www.youtube.com/embed/huG2Eg6-4rw?theme=light" frameborder="0" allowfullscreen></iframe></p>
+                  <div className="youtubeContainer">
+                  <iframe
+                    title="Fair Flower"
+                    src="https://www.youtube.com/embed/huG2Eg6-4rw?theme=light"
+                    frameBorder="0"
+                    allowFullScreen></iframe>
+                  </div>
                 <p>Performed live on 4-11-2014 at the faculty recital at <a href="http://rhapsodyarts.org/" target="_blank" rel="noreferrer">Rhapsody Arts Center</a> in Verona, WI by Charlene Adzima (violin) and myself (piano). <i>Fair Flower</i> was created from a joint improvisation by Charlene and me. This piece is actually composed for violin and harpsichord, but this performance on piano + violin is probably our best performance of this piece.</p>
               </div>
             </AccordionDetails>
@@ -225,29 +261,70 @@ const Accordion = withStyles({
             <AccordionDetails>
               <div className="newText text-left">
                 <h4><i>Sky Runner <span className="date">(2014)</span></i></h4>
-                <p><iframe title="Sky Runner" width="560" height="315" src="https://www.youtube.com/embed/eNyBGmPPyTc?theme=light" frameborder="0" allowfullscreen></iframe>
+                  <div className="youtubeContainer">
+                    <iframe
+                    title="Sky Runner"
+                    src="https://www.youtube.com/embed/eNyBGmPPyTc?theme=light"
+                    frameBorder="0"
+                    allowFullScreen>
+                    </iframe>
+                  </div>
                 <br />
+                <p>
                 <span className="download"><a href={skyrunner} download="S. Christian Collins - Sky Runner.mp3">download</a> | sheet music coming soon...</span></p>
                 <p><i>Sky Runner</i> is a synthpop-style piano piece that I wrote as a graduation gift for my student Ian. This piece draws inspiration from demoscene and chiptune styles as well as Martin Galway's unique rhythmic bass line style.</p>
               <Divider className="mb-3" />
                 <h4><i>Prelude <span className="date">(2008, revised 2013)</span></i></h4>
-                <p><iframe title="prelude" width="560" height="315" src="//www.youtube.com/embed/4VP5HjTd29A?theme=light" frameborder="0" allowfullscreen></iframe><br />
+                  <div className="youtubeContainer">
+                    <iframe
+                      title="prelude"
+                      src="//www.youtube.com/embed/4VP5HjTd29A?theme=light"
+                      frameBorder="0"
+                      allowFullScreen>
+                    </iframe>
+                  </div>
+                  <br />
+                  <p>
                 <span className="download"><a href={prelude} download="S. Christian Collins - Five Pieces in Popular Styles, Op. 16 - 1. Prelude.mp3">download</a> | <a href="https://www.musicaneo.com/sheetmusic/sm-209153_prelude_op_16_no_1.html#209153" target="_blank" rel="noreferrer">sheet music</a></span></p>
                 <p>Inspired by the famous Bach C major Prelude (BWV 846), my composition uses a similar, syncopated pattern, but I treat it in more of a pop style. I also don't use the same pattern throughout the entire song (c'mon, Bach!&rpar;</p>
               <Divider className="mb-3" />
                 <h4><i>Crystal Rain <span className="date">(2009)</span></i></h4>
-                <p><iframe title="Crystal Rain" width="560" height="315" src="//www.youtube.com/embed/6RyocfiubiY?theme=light" frameborder="0" allowfullscreen></iframe>
+                  <div className="youtubeContainer">
+                    <iframe
+                      title="Crystal Rain"
+                      src="//www.youtube.com/embed/6RyocfiubiY?theme=light"
+                      frameBorder="0"
+                      allowFullScreen>
+                    </iframe>
+                  </div>
                 <br />
+                <p>
                 <span className="download"><a href={crystalrain} download="S. Christian Collins - Five Pieces in Popular Styles, Op. 16 - 2. Crystal Rain.mp3">download</a> | <a href="https://www.musicaneo.com/sheetmusic/sm-210245_crystal_rain_op_16_no_2.html#210245" target="_blank" rel="noreferrer">sheet music</a></span></p>
                 <p>This piece is the result of the most tortured composition process imaginable. Hopefully it doesn't show. I started writing it around 2000 and have been picking at it ever since. I made the final tweaks to the piece in July 2014, and I can finally say I'm happy with it.
                 </p>
               <Divider className="mb-3" />
                 <h4><i>Nocturne <span className="date">(2012)</span></i></h4>
-                <iframe title="Nocturne" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F108995805&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false"></iframe>
+                <iframe 
+                  title="Nocturne"
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameBorder="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/108995805&color=%2300bfff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                  <div className="soundCloud d-flex row wrap">
+                    <a href="https://soundcloud.com/s-christian-collins" title="S. Christian Collins" target="_blank" rel="noreferrer" className="soundCloud-userName">S. Christian Collins</a> · 
+                    <a href="https://soundcloud.com/s-christian-collins/nocturne-namm-2013-version" title="Nocturne (NAMM 2013 Version)" target="_blank" rel="noreferrer" className="soundCloud-userName">Nocturne (NAMM 2013 Version)</a></div>
                 <p>A piano piece I wrote for my sister for Christmas 2012. As part of my NAMM demo for Acoustica, I added some strings backing as well. The strings don't always fit as well as I'd like, but this piece was conceived solely as a solo piano work so it probably works best as such. In the original piano version, the thunder effect is created by rumbling the lowest strings on the piano. At some point I'll try to get a recording of this on a real grand so I can perform all of the hand-on-string effects that are supposed to be in there. The second half of this song is based on a short improv I did in 1997 called "Dream", which was available on this site previously.</p>
               <Divider className="mb-3" />
                 <h4><i>Neo-Baroque Suite <span className="date">(2015)</span></i></h4>
-                <p><iframe title="Neo-Baroque Suite" width="560" height="315" src="https://www.youtube.com/embed/K9ipZp60aWQ?theme=light" frameborder="0" allowfullscreen></iframe></p>
+                  <div className="youtubeContainer">
+                    <iframe
+                      title="Neo-Baroque Suite"
+                      src="https://www.youtube.com/embed/K9ipZp60aWQ?theme=light"
+                      frameBorder="0"
+                      allowFullScreen></iframe>
+                  </div>
                 <p>The premiere performance of <i>Neo-Baroque Suite</i> for harpsichord. This is a work in progress, as I've only written two movements so far. Performed live on the <a href="http://www.fusmadison.org/musicale" target="_blank" rel="noreferrer">Friday Musicale</a>, 2/13/2015 at the First Unitarian Society of Madison, WI.</p>
               <Divider className="mb-3" />
                 <h4><i>When He Speaks <span className="date">(1999)</span></i></h4>
