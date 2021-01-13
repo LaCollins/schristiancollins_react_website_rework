@@ -5,6 +5,8 @@ import DScarlattiSonata from '../../assets/music/D_Scarlatti--Sonata_in_F-minor_
 import RavelMirrors3 from '../../assets/music/Ravel--Miroirs-III_Une_barque_sur_l_ocean-(S_C_Collins-piano).mp3';
 import DScarlattiSonataSheetMusic from '../../assets/music/sheet_music/scarlatti/D_Scarlatti--Sonata_K466.pdf';
 import RavelMirrors4 from '../../assets/music/Ravel--Miroirs-IV_Alborada_del_gracioso-(S_C_Collins-piano).mp3';
+import MessiaenXV from '../../assets/music/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XV-(S_C_Collins-piano).mp3';
+import MessiaenXVI from '../../assets/music/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XVI-(S_C_Collins-piano).mp3';
 
 const RecordingsOther = () => {
     return (
@@ -48,6 +50,26 @@ const RecordingsOther = () => {
                 </audio>
                 <br />
                 <span className="download"><a href={RavelMirrors4} download="Ravel - Miroirs-IV. Alborada del gracioso (S. C. Collins, piano).mp3">download</a> | Recording from my master's recital at the University of Minnesota</span>
+            
+            <Divider className="mb-3" />
+                <h4><i>Messiaen - 20 Regards Sur L'Enfant Jesus-XV. Le Baiser de L'Enfant Jesus <span className="date"  >(2003)</span></i></h4>
+                <audio controls="controls" preload="none">
+                <source src="https://www.dropbox.com/s/78n420d7wobew04/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XV-%28S_C_Collins-piano%29.ogg?dl=1" type="audio/ogg" />
+                <source src="https://www.dropbox.com/s/dpvgzl9pz47my3y/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XV-%28S_C_Collins-piano%29.mp3?dl=1" type="audio/mp3" />
+                Your browser does not support embedded audio.
+                </audio>
+                <br />
+                <span className="download"><a href={MessiaenXV} download="Messiaen - 20 Regards Sur L'Enfant Jesus-XV. Le Baiser de L'Enfant Jesus (S. C. Collins, piano).mp3">download</a> | Recording from my master's recital at the University of Minnesota</span>
+
+            <Divider className="mb-3" />
+                <h4><i>Messiaen - 20 Regards Sur L'Enfant Jesus-XVI. Regard des Prophetes, des Bergers et des Mages <span className="date">(2003)</span></i></h4>
+                <audio controls="controls" preload="none">
+                <source src="https://www.dropbox.com/s/ho3v9a2rxibejzz/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XVI-%28S_C_Collins-piano%29.ogg?dl=1" type="audio/ogg" />
+                <source src="https://www.dropbox.com/s/z2dxevm48vu5dnt/Messiaen--20_Regards_Sur_L_Enfant_Jesus-XVI-%28S_C_Collins-piano%29.mp3?dl=1" type="audio/mp3" />
+                Your browser does not support embedded audio.
+                </audio>
+                <br />
+                <span className="download"><a href={MessiaenXVI} download="Messiaen - 20 Regards Sur L'Enfant Jesus-XVI. Regard des Prophetes, des Bergers et des Mages (S. C. Collins, piano).mp3">download</a> | Recording from my master's recital at the University of Minnesota</span>
             </div>
         </div>
     )
