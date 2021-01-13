@@ -5,7 +5,6 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Divider from '@material-ui/core/Divider';
 import './RecordingsOriginal.css';
-import '../WhatsNew/WhatsNew.css';
 import foolmeonce from '../../assets/music/S_Christian_Collins--Fool_Me_Once.mp3';
 import starrangers from '../../assets/music/S_Christian_Collins--Star_Rangers-title.mp3';
 import starrangersdefeat from '../../assets/music/S_Christian_Collins--Star_Rangers-defeat.mp3';

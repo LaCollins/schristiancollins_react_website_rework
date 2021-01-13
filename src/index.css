@@ -18,7 +18,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: black !important;
-  background-image: url('./assets/images/bg-curtains.jpg');
+  background: url('./assets/images/bg-curtains.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   font-family: 'Linux' !important;
 }
@@ -30,7 +34,7 @@ code {
 
 @media only screen and (max-width: 600px) {
   body {
-    background-image: url('./assets/images/bg-curtains-mobile.jpg');
+    background: url('./assets/images/bg-curtains-mobile.jpg') no-repeat center center fixed;
     background-size: cover;
   }
 }
@@ -71,4 +75,54 @@ a:hover {
 a:active {
   color:#ffffff;
   text-decoration:none;
+}
+
+/* Styling for text, links, and boarder box on all pages */
+
+.date {
+  font-weight: normal;
+}
+
+.download {
+  font-size:0.90em;
+  color:#b0c0e9;
+}
+
+.WhatsNew, .Talents, .RecordingsOriginal, .RecordingsOther {
+  margin-top: 125px;
+  color: white;
+  text-align: center;
+  background-color: rgb(59, 46, 46, .6);
+  border-radius: 10px;
+  border: darkgray solid 1px;
+  padding: 25px;
+  font-size: medium;
+}
+
+.newText a:link {
+  color:#508ED8;
+  text-decoration:none;
+}
+
+.newText a:visited {
+  color:#8E79A5;
+  text-decoration:none;
+}
+
+.newText a:hover {
+  color:#7EBAFF;
+  text-decoration:none;
+}
+
+.newText a:active {
+  color:#ffffff;
+  text-decoration:none;
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .WhatsNew, .Talents, .RecordingsOriginal, .Home {
+    width: 90%;
+    margin-left: 75px;
+}
 }

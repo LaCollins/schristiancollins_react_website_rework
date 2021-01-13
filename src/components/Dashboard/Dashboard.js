@@ -178,7 +178,12 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="Recordings-Original" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/performances"
+                  className={classes.nested}>
                   <ListItemText primary="Recordings-Other" />
                 </ListItem>
                 <ListItem button className={classes.nested}>
