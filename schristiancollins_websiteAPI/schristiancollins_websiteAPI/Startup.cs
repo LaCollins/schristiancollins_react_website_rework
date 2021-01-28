@@ -27,6 +27,9 @@ namespace schristiancollins_websiteAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            options.AddPolicy("ItsAllGood",
+                builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddTransient<WhatsNewRepository>();
         }
@@ -44,6 +47,8 @@ namespace schristiancollins_websiteAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("ItsAllGood");
 
             app.UseEndpoints(endpoints =>
             {
