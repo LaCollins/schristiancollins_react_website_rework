@@ -1,0 +1,43 @@
+[
+    {
+    "electronic_pop" : {
+        "collectionId" : "",
+        "collectionTitle" : "",
+        "caollectionDate" : ""
+    }
+    },
+    {
+        "mp3" : {
+            "songId" : "",
+            "songTitle" : "",
+            "oggUrl" : "",
+            "mp3Url" : "",
+            "downloadUrl": "",
+            "sheetMusicUrl" : "",
+            "additionalDetails" : "",
+            "description": "",
+            "collectionId": ""
+        },
+        "soundCloud" : {
+            "songId" : "",
+            "songTitle" : "",
+            "embedUrl" : "",
+            "directUrl" : "",
+            "downloadUrl": "",
+            "sheetMusicUrl" : "",
+            "additionalDetails" : "",
+            "description": "",
+            "collectionId": ""
+        },
+        "youtube" : {
+            "songId" : "",
+            "songTitle" : "",
+            "embedUrl" : "",
+            "downloadUrl": "",
+            "sheetMusicUrl" : "",
+            "additionalDetails" : "",
+            "description": "",
+            "collectionId": ""
+        }
+    }
+]
