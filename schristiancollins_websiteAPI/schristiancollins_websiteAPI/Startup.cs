@@ -32,6 +32,7 @@ namespace schristiancollins_websiteAPI
                 builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddTransient<WhatsNewRepository>();
+            services.AddTransient<MusicCollectionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
