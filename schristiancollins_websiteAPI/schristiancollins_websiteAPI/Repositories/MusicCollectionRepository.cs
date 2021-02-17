@@ -35,5 +35,39 @@ namespace schristiancollins_websiteAPI.Repositories
                 return mp3s;
             }
         }
+
+        public IEnumerable<SoundCloud> GetSoundcloudByGenre(string genre)
+        {
+            var sql = @"SELECT song_collections.collectionId, collectionTitle, YEAR(collectionDate) as collectionDate, genre, collectionDescription, soundcloud.songId, soundcloud.songTitle,
+                        soundcloud.mediaType, soundcloud.embedUrl, soundcloud.directUrl, soundcloud.downloadUrl, soundcloud.sheetMusicUrl, soundcloud.additionalDetails
+                        FROM soundcloud
+                        JOIN song_collections
+                        ON soundcloud.collectionId = song_collections.collectionId
+                        WHERE song_collections.genre = @genre";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var soundcloud = db.Query<SoundCloud>(sql, new { genre = genre });
+
+                return soundcloud;
+            }
+        }
+
+        public IEnumerable<YouTube> GetYouTubeByGenre(string genre)
+        {
+            var sql = @"SELECT song_collections.collectionId, collectionTitle, YEAR(collectionDate) as collectionDate, genre, collectionDescription, youtube.songId, youtube.songTitle,
+                        youtube.mediaType, youtube.embedUrl, youtube.downloadUrl, youtube.sheetMusicUrl, youtube.additionalDetails
+                        FROM youtube
+                        JOIN song_collections
+                        ON youtube.collectionId = song_collections.collectionId
+                        WHERE song_collections.genre = @genre";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var youtube = db.Query<YouTube>(sql, new { genre = genre });
+
+                return youtube;
+            }
+        }
     }
 }
