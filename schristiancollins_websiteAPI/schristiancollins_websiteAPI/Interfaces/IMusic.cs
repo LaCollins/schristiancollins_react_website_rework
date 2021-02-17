@@ -13,9 +13,9 @@ namespace schristiancollins_websiteAPI.Interfaces
         string CollectionDescription { get; set; }
         int SongId { get; set; }
         string SongTitle { get; set; }
-        string MediaTyle { get; set; }
+        string MediaType { get; set; }
         string DownloadURL { get; set; }
-        string SheetMusicUrlj { get; set; }
+        string SheetMusicUrl { get; set; }
         string AdditionalDetails { get; set; }
     }
 }

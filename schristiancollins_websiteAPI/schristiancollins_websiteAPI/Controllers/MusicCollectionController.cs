@@ -32,5 +32,29 @@ namespace schristiancollins_websiteAPI.Controllers
             return Ok(result);
         }
 
+
+        [HttpGet("soundcloud/genre/{genre}")]
+        public IActionResult GetSoundcloudByGenre(string genre)
+        {
+            var result = _musicCollectionRepository.GetSoundcloudByGenre(genre);
+            if (!result.Any())
+            {
+                return NotFound("No Soundcloud songs in that genre exist");
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("youtube/genre/{genre}")]
+        public IActionResult GetYoutubeByGenre(string genre)
+        {
+            var result = _musicCollectionRepository.GetYouTubeByGenre(genre);
+            if (!result.Any())
+            {
+                return NotFound("No Youtube videos in that genre exist");
+            }
+
+            return Ok(result);
+        }
     }
 }
