@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
@@ -21,6 +21,16 @@ import crystalrain from '../../assets/music/S_Christian_Collins--Op16-No2--Cryst
 import whenhespeaks from '../../assets/music/S_Christian_Collins--When_He_Speaks.mp3';
 import ponies from '../../assets/music/S_Christian_Collins--The_Ponies_are_Loose.mp3';
 import thegift from '../../assets/music/S_Christian_Collins--The_Gift.mp3';
+import MP3 from '../../helpers/songStyles/MP3';
+import SoundCloud from '../../helpers/songStyles/SoundCloud';
+import YouTube from '../../helpers/songStyles/YouTube';
+
+import {
+  getSoundCloudByGenre,
+  getMp3sByGenre,
+  getYouTubeByGenre,
+  getMusicByGenre
+} from '../../helpers/data/musicData';
 
 const Accordion = withStyles({
     root: {
@@ -64,13 +74,35 @@ const Accordion = withStyles({
       color: 'white',
     },
   }))(MuiAccordionDetails);
+
   
   const OriginalRecordings = () => {
     const [expanded, setExpanded] = React.useState('');
+    const [electric_pop, setElectricPop] = React.useState([]);
   
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
     };
+
+
+    const electroPopSort = electric_pop.map((song) => {
+      if (song.mediaType === 'mp3') {
+        return MP3(song);
+      } else if (song.mediaType === 'soundcloud') {
+        return SoundCloud(song);
+      } else if (song.mediaType === 'youtube') {
+        return YouTube(song);
+      }
+      return ('');
+    })
+
+    useEffect(() => {
+      setElectricPop(getMusicByGenre('electronic_pop'));
+    }, []);
+
+    electric_pop.sort((a, b) => b.collectionDate - a.collectionDate);
+
+    console.error(electric_pop);
 
     return (
         <div>
@@ -80,59 +112,7 @@ const Accordion = withStyles({
             </AccordionSummary>
             <AccordionDetails>
                 <div className="newText text-left">
-                    <h4><i>King of Lizards <span className="date">(2012)</span></i></h4>
-                    <iframe
-                      title="King of the Lizards"
-                      width="100%"
-                      height="166"
-                      scrolling="no"
-                      frameBorder="no"
-                      allow="autoplay"
-                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/106536381&color=%2300bfff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                      <div className="soundCloud d-flex row wrap">
-                        <a href="https://soundcloud.com/s-christian-collins" title="S. Christian Collins" target="_blank" rel="noreferrer" className="soundCloud-userName">S. Christian Collins</a> · 
-                        <a href="https://soundcloud.com/s-christian-collins/modemixer-king-of-lizards" title="modemixer - King Of Lizards" target="_blank" rel="noreferrer" className="soundCloud-userName">modemixer - King Of Lizards</a>
-                      </div>
-                    <br />
-                    <p>
-                    <span className="download"><a href="http://modemixer.bandcamp.com/" target="_blank" rel="noreferrer">download</a></span></p>
-                    <p>Doskpop! Inspired by the tracker music of Gustaf Grefberg (Lizardking). Made in Mixcraft 6 Pro Studio using almost entirely built-in synths and effects originally as a Mixcraft demo for NAMM 2012. Finally remastered in August 2013.</p>
-                <Divider className="mb-3" />
-                    <h4><i>Blade's Edge <span className="date">(2011)</span></i></h4>
-                    <p><audio controls="controls" preload="none">
-                    <source src="https://www.dropbox.com/s/xa6flruw0m18xgo/S_Christian_Collins--Blades_Edge.ogg?dl=1" type="audio/ogg" />
-                    <source src="https://www.dropbox.com/s/zty2rq9idhdpfri/S_Christian_Collins--Blades_Edge.mp3?dl=1" type="audio/mp3" />
-                    Your browser does not support embedded audio.
-                    </audio>
-                    <br />
-                    <span className="download"><a href="music/S_Christian_Collins--Blades_Edge.mp3" download="S. Christian Collins - Blade's Edge.mp3">download</a> | Blade's Edge</span></p>
-                    <p>This track was written as a demo for Acoustica to show off the new synths included with <a href="http://www.acoustica.com/mixcraft-pro-studio/" target="_blank" rel="noreferrer">Mixcraft Pro Studio 5</a>. <i>Blade's Edge</i> is a Blade Runner-esque composition that uses Gunnar Ekornas' fabulous <a href="http://www.memorymoon.com/me80.htm" target="_blank" rel="noreferrer">ME80 virtual synthesizer</a>, which emulates the famous Yamaha CS80 synthesizer that Vangelis used in the 80's to create the legendary Blade Runner soundtrack.</p>
-                <Divider className="mb-3" />
-                    <h4><i>Fast Taxi <span className="date">(2010)</span></i></h4>
-                    <iframe
-                      title="Fast Taxi"
-                      width="100%"
-                      height="166"
-                      scrolling="no"
-                      frameBorder="no"
-                      allow="autoplay"
-                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150058706&color=%2300bfff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                    <div className="soundCloud d-flex row wrap">
-                        <a href="https://soundcloud.com/s-christian-collins" title="S. Christian Collins" target="_blank" rel="noreferrer" className="soundCloud-userName">S. Christian Collins</a> · 
-                        <a href="https://soundcloud.com/s-christian-collins/modemixer-fast-taxi-2014-remaster" title="modemixer - Fast Taxi (2014 Remaster - Rev B1)" target="_blank" rel="noreferrer" className="soundCloud-userName">modemixer - Fast Taxi (2014 Remaster - Rev B1)</a>
-                    </div>
-                    <br />
-                    <p><span className="download"><a href="http://modemixer.bandcamp.com/track/fast-taxi-2014-remaster" target="_blank" rel="noreferrer">download</a></span></p>
-                    <p>Created as a demo for <a href="http://www.acoustica.com/mixcraft/" target="_blank" rel="noreferrer">Acoustica Mixcraft 5</a>.</p>
-                <Divider className="mb-3" />
-                    <h4><i>Fool Me Once <span className="date">(2008)</span></i></h4>
-                    <p><audio controls="controls" preload="none">
-                    <source src="https://www.dropbox.com/s/cbuzffqy7gx615t/S_Christian_Collins--Fool_Me_Once.ogg?dl=1" type="audio/ogg" />
-                    <source src="https://www.dropbox.com/s/ie62kl3xzcyl12g/S_Christian_Collins--Fool_Me_Once.mp3?dl=1" type="audio/mp3" />
-                    Your browser does not support embedded audio.
-                    </audio>
-                    <br />
-                    <span className="download"><a href={foolmeonce} download="S. Christian Collins - Fool Me Once.mp3">download</a> | created as a demo for <a href="http://www.acoustica.com/mixcraft/" target="_blank" rel="noreferrer">Acoustica Mixcraft 4</a></span></p>
+                  {electroPopSort}
                 </div>
             </AccordionDetails>
           </Accordion>
@@ -277,7 +257,7 @@ const Accordion = withStyles({
                   <div className="youtubeContainer">
                     <iframe
                       title="prelude"
-                      src="//www.youtube.com/embed/4VP5HjTd29A?theme=light"
+                      src="https://www.youtube.com/embed/4VP5HjTd29A?theme=light"
                       frameBorder="0"
                       allowFullScreen>
                     </iframe>
@@ -291,7 +271,7 @@ const Accordion = withStyles({
                   <div className="youtubeContainer">
                     <iframe
                       title="Crystal Rain"
-                      src="//www.youtube.com/embed/6RyocfiubiY?theme=light"
+                      src="https://www.youtube.com/embed/6RyocfiubiY?theme=light"
                       frameBorder="0"
                       allowFullScreen>
                     </iframe>
