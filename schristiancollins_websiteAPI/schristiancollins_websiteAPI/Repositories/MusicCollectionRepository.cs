@@ -26,7 +26,8 @@ namespace schristiancollins_websiteAPI.Repositories
                         FROM mp3
                         JOIN song_collections
                         ON mp3.collectionId = song_collections.collectionId
-                        WHERE song_collections.genre = @genre";
+                        WHERE song_collections.genre = @genre
+                        ORDER BY collectionDate DESC";
 
             using (var db = new SqlConnection(ConnectionString))
             {
@@ -43,7 +44,8 @@ namespace schristiancollins_websiteAPI.Repositories
                         FROM soundcloud
                         JOIN song_collections
                         ON soundcloud.collectionId = song_collections.collectionId
-                        WHERE song_collections.genre = @genre";
+                        WHERE song_collections.genre = @genre
+                        ORDER BY collectionDate DESC";
 
             using (var db = new SqlConnection(ConnectionString))
             {
@@ -60,7 +62,8 @@ namespace schristiancollins_websiteAPI.Repositories
                         FROM youtube
                         JOIN song_collections
                         ON youtube.collectionId = song_collections.collectionId
-                        WHERE song_collections.genre = @genre";
+                        WHERE song_collections.genre = @genre
+                        ORDER BY collectionDate DESC";
 
             using (var db = new SqlConnection(ConnectionString))
             {

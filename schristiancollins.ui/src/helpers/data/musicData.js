@@ -27,11 +27,26 @@ const getYouTubeByGenre = (genre) => new Promise((resolve, reject) => {
     axios.get(`${baseUrl}/api/schristiancollins/music_collection/youtube/genre/${genre}`)
         .then((result) => {
             const youtube = result.data;
-
             resolve(youtube);
         })
         .catch((error) => reject(error));
 });
+
+const setCollection = (musicArray) => {
+    const collectionArray = [];
+    
+    for (let i = 0; i < musicArray.length; i++ ) {
+        let collectionArrayObj = {
+            collectionTitle : musicArray[i].collectionTitle,
+            collectionId : musicArray[i].collectionId
+        }
+
+        if (!collectionArray.some(el => el.collectionId === collectionArrayObj.collectionId)) {
+            collectionArray.push(collectionArrayObj);
+        } 
+        console.log(collectionArray, 'collection array');
+    }
+}   
 
 const getMusicByGenre = (genre) => {
     const allMusic = [];
@@ -40,19 +55,19 @@ const getMusicByGenre = (genre) => {
             response.forEach(song => {
                 allMusic.push(song);
             });
-            getSoundCloudByGenre(genre)
-                .then((response) => {
-                    response.forEach(song => {
-                        allMusic.push(song);
-                    });
-                    getYouTubeByGenre(genre)
-                    .then((response) => {
-                        response.forEach(song => {
-                            allMusic.push(song);
-                        });
-                    })
-                })
         })
+    getSoundCloudByGenre(genre)
+    .then((response) => {
+        response.forEach(song => {
+            allMusic.push(song);
+        });
+    })
+    getYouTubeByGenre(genre)
+    .then((response) => {
+        response.forEach(song => {
+            allMusic.push(song);
+        });
+    })
 
     return allMusic;
 }
@@ -61,5 +76,6 @@ export {
     getSoundCloudByGenre,
     getMp3sByGenre,
     getYouTubeByGenre,
-    getMusicByGenre
+    getMusicByGenre,
+    setCollection
 };
