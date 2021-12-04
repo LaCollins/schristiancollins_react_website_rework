@@ -21,6 +21,10 @@
     bottom: 0px;
 }
 
+main {
+    width: 100vw;
+}
+
 @media only screen and (max-width: 600px) {
     .title {
         z-index: 100;

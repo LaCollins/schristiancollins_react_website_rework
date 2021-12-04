@@ -186,7 +186,12 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="Recordings-Other" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button
+                  onClick={closeDrawer}
+                  component="a"
+                  href="https://schristiancollins.musicaneo.com/sheetmusic/"
+                  target="_blank"
+                  className={classes.nested}>
                   <ListItemText primary="Sheet Music-Original" />
                 </ListItem>
                 <ListItem button className={classes.nested}>

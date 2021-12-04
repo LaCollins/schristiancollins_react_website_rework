@@ -17,7 +17,7 @@ namespace schristiancollins_websiteAPI.Models
         public string CollectionTitle { get; set; }
         public string Genre { get; set; }
         public string CollectionDescription { get; set; }
-
+        public int CollectionDate { get; set; }
         public string EmbedUrl { get; set; }
     }
 }

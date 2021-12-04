@@ -16,6 +16,7 @@ namespace schristiancollins_websiteAPI.Models
         public string AdditionalDetails { get; set; }
         public int CollectionId { get; set; }
         public string CollectionTitle { get; set; }
+        public int CollectionDate { get; set; }
         public string Genre { get; set; }
         public string CollectionDescription { get; set; }
 
