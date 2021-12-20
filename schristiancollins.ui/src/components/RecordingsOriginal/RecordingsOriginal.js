@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
@@ -24,7 +24,7 @@ import MP3 from '../../helpers/songStyles/MP3';
 import SoundCloud from '../../helpers/songStyles/SoundCloud';
 import YouTube from '../../helpers/songStyles/YouTube';
 
-import { getMusicByGenre, setCollection } from '../../helpers/data/musicData';
+import { getMusicByGenre, setCollection, getRecordingsOriginal } from '../../helpers/data/musicData';
 
 const Accordion = withStyles({
     root: {
@@ -70,27 +70,32 @@ const Accordion = withStyles({
   }))(MuiAccordionDetails);
 
   
-  const OriginalRecordings = () => {
-    const [expanded, setExpanded] = React.useState('');
-    const [electric_pop, setElectricPop] = React.useState([]);
-    const [film_game, setFilmGame] = React.useState([]);
-    const [instrumental, setInstrumental] = React.useState([]);
-    const [piano_harpsichord, setPianoHarpsichord] = React.useState([]);
+  const RecordingsOriginal = () => {
+    const [expanded, setExpanded] = useState('');
+    const [electric_pop, setElectricPop] = useState([]);
+    const [film_game, setFilmGame] = useState([]);
+    const [instrumental, setInstrumental] = useState([]);
+    const [piano_harpsichord, setPianoHarpsichord] = useState([]);
+    const [pageData, setPageData] = useState([]);
   
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
     };
 
 
-    const electroPopSort = electric_pop.map((song) => {
-      if (song.mediaType === 'mp3') {
-        return MP3(song);
-      } else if (song.mediaType === 'soundcloud') {
-        return SoundCloud(song);
-      } else if (song.mediaType === 'youtube') {
-        return YouTube(song);
+    const electroPopSort = electric_pop.map((music) => {
+      if(music.collection_or_single_song === 'single_song') {
+        console.log(music.single_song.song);
+        if (music.single_song.song.file_type === 'mp3') {
+              return MP3(music.single_song.song);
+            } else if (music.single_song.song.file_type === 'soundcloud') {
+              return SoundCloud(music.single_song.song);
+            } else if (music.single_song.song === 'youtube') {
+              return YouTube(music.single_song.song);
+            }
+            return ('');
       }
-      return ('');
+      console.log(music, 'electric-pop');
     })
 
     const filmGameSort = film_game.map((song) => {
@@ -127,20 +132,32 @@ const Accordion = withStyles({
     })
 
     useEffect(() => {
-      setElectricPop(getMusicByGenre('electronic_pop'));
+      getRecordingsOriginal().then((res) => {
+        setPageData(res);
+        res.recordings.forEach((group) => {
+          if (group.genre === 'electronic-pop') {
+            setElectricPop(group.music);
+          }
+        })
+        console.log(res, "from OG recordings");
+      });
       setFilmGame(getMusicByGenre('film_game'));
       setInstrumental(getMusicByGenre('instrumental'));
       setPianoHarpsichord(getMusicByGenre('piano_harpsichord'));
+      console.log(pageData);
     }, []);
 
-    electric_pop.sort((a, b) => b.collectionDate - a.collectionDate);
     film_game.sort((a, b) => b.collectionDate - a.collectionDate);
     instrumental.sort((a, b) => b.collectionDate - a.collectionDate);
     piano_harpsichord.sort((a, b) => b.collectionDate - a.collectionDate);
     setCollection(film_game);
 
     return (
-        <div>
+      <>
+      {pageData.page_header ? (
+      <div className="RecordingsOriginal fade-in">
+          {pageData.page_header ? (<h1>{pageData.page_header}</h1>) : ('')}
+          {pageData.page_content ? (<div className="newText text-left" dangerouslySetInnerHTML={{__html: pageData.page_content}}></div>) : ('')}
           <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <h2>Electronic &amp; Pop</h2>
@@ -238,19 +255,9 @@ const Accordion = withStyles({
             </AccordionDetails>
           </Accordion>
         </div>
+      ) : ('')};
+        </>
         );
     }
-
-const RecordingsOriginal = () => {
-    return (
-        <div className="RecordingsOriginal">
-            <h1>Recordings of Original Music</h1>
-            <div className="newText text-left">
-                <p>Here are some selections from my 22+ years of compositional output. I hope you enjoy them. This page will be updated periodically as I get more of my music recorded.</p>
-            </div>
-            <OriginalRecordings />
-        </div>
-    )
-}
 
 export default RecordingsOriginal;

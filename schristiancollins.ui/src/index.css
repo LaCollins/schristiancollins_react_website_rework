@@ -96,7 +96,6 @@ a:active {
   border-radius: 10px;
   border: darkgray solid 1px;
   padding: 25px;
-  font-size: medium;
 }
 
 .newText a:link {
@@ -125,4 +124,15 @@ a:active {
     width: 90%;
     margin-left: 75px;
 }
+}
+
+/* fade in */
+.fade-in {
+  animation: fade 0.9s ease-in;
+}
+
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
 }

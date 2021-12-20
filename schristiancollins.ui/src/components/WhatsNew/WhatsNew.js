@@ -8,8 +8,6 @@ import './WhatsNew.css';
 function WhatsNew() {
   const [news, setNews] = useState([]);
 
-  
-
   useEffect(() => {
       newsData()
       .then((response) => setNews(response))
@@ -17,15 +15,19 @@ function WhatsNew() {
   }, [])
 
   return(
-    <div className="WhatsNew">
-      <h1>What's New</h1>
-        {news.reverse().map((item) => (
-        <div className="text-left newText" key={item.newsId}>
-          <h2>{moment(item.news_date).format('MMMM Do YYYY')}</h2>
-          <p dangerouslySetInnerHTML={{__html: item.information}}></p>
-        </div>
-        ))}
-    </div>
+    <>
+    {news.length ? (
+      <div className="WhatsNew fade-in">
+        <h1>What's New</h1>
+          {news.map((item) => (
+          <div className="text-left newText" key={item.news_date}>
+            <h2>{moment(item.news_date).format('MMMM Do YYYY')}</h2>
+            <div dangerouslySetInnerHTML={{__html: item.content}}></div>
+          </div>
+          ))}
+      </div>
+    ) : ('')}
+    </>
   );
 }
 

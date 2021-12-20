@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import React from 'react';
 import Home from '../components/Home/Home';
 import WhatsNew from '../components/WhatsNew/WhatsNew';
 import Talents from '../components/Talents/Talents';

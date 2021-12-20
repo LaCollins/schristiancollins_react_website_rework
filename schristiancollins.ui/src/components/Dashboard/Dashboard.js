@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
   },
   dividerColor: {
     backgroundColor: 'darkgray',
@@ -191,6 +191,7 @@ function Dashboard(props) {
                   component="a"
                   href="https://schristiancollins.musicaneo.com/sheetmusic/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={classes.nested}>
                   <ListItemText primary="Sheet Music-Original" />
                 </ListItem>
@@ -234,15 +235,15 @@ function Dashboard(props) {
                 <ListItem>
                   <div className="tinySocials d-flex row-wrap">
                     <a href="mailto:s_chriscollins@hotmail.com" className="mr-3"><MailIcon /></a>
-                    <a href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
+                    <a href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noopener noreferrer">
                     <img src={yt} alt="youtube" className="mr-3" /></a>
-                    <a href="https://schristiancollins.wordpress.com/" target="_blank" rel="noreferrer">
+                    <a href="https://schristiancollins.wordpress.com/" target="_blank" rel="noopener noreferrer">
                     <img src={wp} alt="WordPress Blog" className="mr-3" /></a>
-                    <a href="https://www.facebook.com/schristiancollins" target="_blank" rel="noreferrer">
+                    <a href="https://www.facebook.com/schristiancollins" target="_blank" rel="noopener noreferrer">
                     <img src={fb} alt="facebook" className="mr-3" /></a>
-                    <a href="https://twitter.com/SChrisCollins" target="_blank" rel="noreferrer">
+                    <a href="https://twitter.com/SChrisCollins" target="_blank" rel="noopener noreferrer">
                     <img src={tw} alt="twitter" className="mr-3" /></a>
-                    <a href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noreferrer">
+                    <a href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noopener noreferrer">
                     <img src={sc} alt="soundcloud" className="mr-3" /></a>
                   </div>
                 </ListItem>
@@ -253,19 +254,19 @@ function Dashboard(props) {
               <List classes={{ root: classes.socials }}>
                 <ListItemLink href="mailto:s_chriscollins@hotmail.com">
                   <MailIcon className="mr-2" /><ListItemText primary="Contact"></ListItemText></ListItemLink>
-                <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noreferrer">
+                <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noopener noreferrer">
                   <img src={yt} alt="youtube" className="mr-2" /><ListItemText primary="YouTube"></ListItemText>
                 </ListItemLink>
-                <ListItemLink href="https://schristiancollins.wordpress.com/" target="_blank" rel="noreferrer">
+                <ListItemLink href="https://schristiancollins.wordpress.com/" target="_blank" rel="noopener noreferrer">
                   <img src={wp} alt="WordPress Blog" className="mr-2" /><ListItemText primary="WordPress (blog)"></ListItemText>
                 </ListItemLink>
-                <ListItemLink href="https://www.facebook.com/schristiancollins" target="_blank" rel="noreferrer">
+                <ListItemLink href="https://www.facebook.com/schristiancollins" target="_blank" rel="noopener noreferrer">
                   <img src={fb} alt="facebook" className="mr-2" /><ListItemText primary="Facebook"></ListItemText>
                 </ListItemLink>
-                <ListItemLink href="https://twitter.com/SChrisCollins" target="_blank" rel="noreferrer">
+                <ListItemLink href="https://twitter.com/SChrisCollins" target="_blank" rel="noopener noreferrer">
                   <img src={tw} alt="twitter" className="mr-2" /><ListItemText primary="Twitter"></ListItemText>
                 </ListItemLink>
-                <ListItemLink href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noreferrer">
+                <ListItemLink href="https://soundcloud.com/s-christian-collins" target="_blank" rel="noopener noreferrer">
                   <img src={sc} alt="soundcloud" className="mr-2" /><ListItemText primary="SoundCloud"></ListItemText>
                 </ListItemLink>
               </List>

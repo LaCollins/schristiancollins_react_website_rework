@@ -3,6 +3,21 @@ import apiKeys from '../apiKeys.json';
 
 const { baseUrl } = apiKeys.baseUrl;
 
+const wpUrl = 'http://localhost:8888/wp-json/wp/v2';
+
+
+const getRecordingsOriginal = () =>
+  new Promise((resolve, reject) => {
+    axios
+      .get(`${wpUrl}/pages/45`)
+      .then((res) => {
+        const pageObj = res.data.acf;
+
+        resolve(pageObj)
+      })
+      .catch((err) => reject(err))
+  })
+
 const getMp3sByGenre = (genre) => new Promise((resolve, reject) => {
     axios.get(`${baseUrl}/api/schristiancollins/music_collection/mp3/genre/${genre}`)
         .then((result) => {
@@ -73,6 +88,7 @@ const getMusicByGenre = (genre) => {
 }
 
 export {
+    getRecordingsOriginal,
     getSoundCloudByGenre,
     getMp3sByGenre,
     getYouTubeByGenre,

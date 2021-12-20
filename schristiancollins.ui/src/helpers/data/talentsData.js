@@ -1,15 +1,15 @@
 import axios from 'axios'
 const wpUrl = 'http://localhost:8888/wp-json/wp/v2'
 
-const getNews = () =>
+const getTalents = () =>
   new Promise((resolve, reject) => {
     axios
-      .get(`${wpUrl}/pages/22`)
+      .get(`${wpUrl}/pages/39`)
       .then((res) => {
-        const pageObj = res.data.acf.news;
-        resolve(pageObj)
+        const pageObj = res.data.acf;
+        resolve(pageObj);
       })
       .catch((err) => reject(err))
   })
 
-export default getNews;
+export default getTalents;
