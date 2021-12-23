@@ -56,3 +56,12 @@ main {
     }
     
 }
+
+@media only screen and (max-height: 950px) {
+    .large-socials {
+        display: none;
+    } 
+    .small-socials {
+        display: block !important;
+    }
+}

@@ -195,7 +195,12 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="Sheet Music-Original" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/sheetmusic-other"
+                  className={classes.nested}>
                   <ListItemText primary="Sheet Music-Other" />
                 </ListItem>
               </List>
@@ -205,7 +210,12 @@ function Dashboard(props) {
               </ListItem>
               <Collapse in={virtualOpen} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/soundfonts"
+                  className={classes.nested}>
                   <ListItemText primary="About Virtual Instruments" />
                 </ListItem>
                 <ListItem button className={classes.nested}>
@@ -231,7 +241,7 @@ function Dashboard(props) {
                 </ListItem>
               </List>
             </Collapse>
-              <List classes={{ root: classes.smallSocials }} className="socials">
+              <List classes={{ root: classes.smallSocials }} className="socials small-socials">
                 <ListItem>
                   <div className="tinySocials d-flex row-wrap">
                     <a href="mailto:s_chriscollins@hotmail.com" className="mr-3"><MailIcon /></a>
@@ -249,7 +259,7 @@ function Dashboard(props) {
                 </ListItem>
               </List>
             </List>
-            <div className="socials">
+            <div className="socials large-socials">
               <Divider classes={{root: classes.dividerColor}} />
               <List classes={{ root: classes.socials }}>
                 <ListItemLink href="mailto:s_chriscollins@hotmail.com">
@@ -281,7 +291,7 @@ function Dashboard(props) {
         <Router history={history}>
         <div className={classes.root}>
           <AppBar position="fixed" className={classes.appBar}>
-              <Toolbar>
+              <Toolbar disableGutters={true}>
               <IconButton
                   color="inherit"
                   aria-label="open drawer"

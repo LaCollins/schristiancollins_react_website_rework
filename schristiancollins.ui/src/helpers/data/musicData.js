@@ -1,7 +1,4 @@
 import axios from 'axios';
-import apiKeys from '../apiKeys.json';
-
-const { baseUrl } = apiKeys.baseUrl;
 
 const wpUrl = 'http://localhost:8888/wp-json/wp/v2';
 
@@ -16,82 +13,49 @@ const getRecordingsOriginal = () =>
         resolve(pageObj)
       })
       .catch((err) => reject(err))
-  })
+})
+  
+const getRecordingsOther = () =>
+new Promise((resolve, reject) => {
+axios
+    .get(`${wpUrl}/pages/153`)
+    .then((res) => {
+    const pageObj = res.data.acf;
 
-const getMp3sByGenre = (genre) => new Promise((resolve, reject) => {
-    axios.get(`${baseUrl}/api/schristiancollins/music_collection/mp3/genre/${genre}`)
-        .then((result) => {
-            const mp3s = result.data;
-
-            resolve(mp3s);
-        })
-        .catch((error) => reject(error));
-});
-
-const getSoundCloudByGenre = (genre) => new Promise((resolve, reject) => {
-    axios.get(`${baseUrl}/api/schristiancollins/music_collection/soundcloud/genre/${genre}`)
-        .then((result) => {
-            const soundcloud = result.data;
-
-            resolve(soundcloud);
-        })
-        .catch((error) => reject(error));
-});
-
-const getYouTubeByGenre = (genre) => new Promise((resolve, reject) => {
-    axios.get(`${baseUrl}/api/schristiancollins/music_collection/youtube/genre/${genre}`)
-        .then((result) => {
-            const youtube = result.data;
-            resolve(youtube);
-        })
-        .catch((error) => reject(error));
-});
-
-const setCollection = (musicArray) => {
-    const collectionArray = [];
-    
-    for (let i = 0; i < musicArray.length; i++ ) {
-        let collectionArrayObj = {
-            collectionTitle : musicArray[i].collectionTitle,
-            collectionId : musicArray[i].collectionId
-        }
-
-        if (!collectionArray.some(el => el.collectionId === collectionArrayObj.collectionId)) {
-            collectionArray.push(collectionArrayObj);
-        } 
-        console.log(collectionArray, 'collection array');
-    }
-}   
-
-const getMusicByGenre = (genre) => {
-    const allMusic = [];
-    getMp3sByGenre(genre)
-        .then((response) => {
-            response.forEach(song => {
-                allMusic.push(song);
-            });
-        })
-    getSoundCloudByGenre(genre)
-    .then((response) => {
-        response.forEach(song => {
-            allMusic.push(song);
-        });
+    resolve(pageObj)
     })
-    getYouTubeByGenre(genre)
-    .then((response) => {
-        response.forEach(song => {
-            allMusic.push(song);
-        });
-    })
+    .catch((err) => reject(err))
+})
 
-    return allMusic;
-}
+const getSheetMusicOther = () =>
+new Promise((resolve, reject) => {
+axios
+    .get(`${wpUrl}/pages/177`)
+    .then((res) => {
+    const pageObj = res.data.acf;
+
+    resolve(pageObj)
+    })
+    .catch((err) => reject(err))
+})
+
+const getAboutVirtualInstruments = () =>
+new Promise((resolve, reject) => {
+axios
+    .get(`${wpUrl}/pages/181`)
+    .then((res) => {
+    console.log(res);
+    const pageObj = res.data.acf;
+
+    resolve(pageObj)
+    })
+    .catch((err) => reject(err))
+})
+
 
 export {
     getRecordingsOriginal,
-    getSoundCloudByGenre,
-    getMp3sByGenre,
-    getYouTubeByGenre,
-    getMusicByGenre,
-    setCollection
+    getRecordingsOther,
+    getSheetMusicOther,
+    getAboutVirtualInstruments,
 };

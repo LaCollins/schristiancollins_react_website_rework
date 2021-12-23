@@ -18,7 +18,13 @@ const SoundCloud = (song) => {
               <a href={song.direct_url} title={"modemixer - " + song.song_title } target="_blank" rel="noreferrer noopener" className="soundCloud-userName">modemixer - {song.song_title}</a>
             </div>
           <p>
-          <span className="download"><a href="http://modemixer.bandcamp.com/" target="_blank" rel="noreferrer noopener">download</a></span></p>
+          <span className="download">
+            {song.download_url ? (<a href={song.download_url} target="_blank" rel="noreferrer noopener">download</a>) : ('')}
+            {song.sheet_music_url ? (' | ') : ('')}
+            {song.sheet_music_url ? (<a href={song.sheet_music_url} target="_blank" rel="noreferrer noopener">sheet music</a>) : ('')}
+            {song.additional_details ? (' | ') : ('')}
+            {song.additional_details ? (<span>{song.additional_details}</span>) : ('')}
+          </span></p>
           <p dangerouslySetInnerHTML={{__html: song.song_description}}></p>
         <Divider className="mb-3" />
       </>
