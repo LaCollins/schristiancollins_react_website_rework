@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getAboutVirtualInstruments } from '../../../helpers/data/musicData';
+import { getPercussion } from '../../../helpers/data/musicData';
 
-const AboutVirtualInstruments = () => {
+const Percussion = () => {
     const [pageData, setPageData] = useState([]);
 
     useEffect(() => {
-        getAboutVirtualInstruments()
+        getPercussion()
             .then((res) => {
                 setPageData(res);
             })
@@ -23,4 +23,4 @@ const AboutVirtualInstruments = () => {
     )
 }
 
-export default AboutVirtualInstruments;
+export default Percussion;

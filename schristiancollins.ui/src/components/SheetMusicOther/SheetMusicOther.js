@@ -14,7 +14,7 @@ const SheetMusicOther = () => {
     return (
         <>
         {pageData.page_header ? (
-            <div className="SheetMusicOther fade-in">
+            <div className="SheetMusicOther fade-in header-container">
                 {pageData.page_header ? (<h1>{pageData.page_header}</h1>) : ('')}
                 {pageData.page_content ? (<div className="newText text-left" dangerouslySetInnerHTML={{__html: pageData.page_content}}></div>) : ('')}
             </div>)

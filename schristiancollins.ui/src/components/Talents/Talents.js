@@ -14,7 +14,7 @@ const Talents = () => {
     return (
         <>
         {talents.content ? (
-        <div className="Talents fade-in">
+        <div className="Talents fade-in header-container">
             <h1>Talents for Hire</h1>
             <div className="text-left newText" dangerouslySetInnerHTML={{__html: talents.content}}>
             </div>

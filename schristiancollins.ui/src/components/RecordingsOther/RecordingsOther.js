@@ -26,7 +26,6 @@ const RecordingsOther = () => {
 
     useEffect(() => {
         getRecordingsOther().then((res) => {
-            console.log(res, 'results');
             setPageData(res);
             setMusicData(res.music);
         })
@@ -36,11 +35,13 @@ const RecordingsOther = () => {
         <>
         {pageData.page_header ? (
         <div className="RecordingsOther fade-in">
+          <div className="header-container">
             {pageData.page_header ? (<h1>{pageData.page_header}</h1>) : ('')}
             {pageData.page_content ? (<div className="newText text-left" dangerouslySetInnerHTML={{__html: pageData.page_content}}></div>) : ('')}
             <div className="newText text-left">
                 {musicSort}
             </div>
+          </div>
         </div>)
         : ('')}
         </>

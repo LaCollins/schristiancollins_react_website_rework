@@ -1,5 +1,5 @@
 import axios from 'axios'
-const wpUrl = 'http://localhost:8888/wp-json/wp/v2'
+const wpUrl = 'https://schriscollins.website/wp-json/wp/v2'
 
 const getNews = () =>
   new Promise((resolve, reject) => {

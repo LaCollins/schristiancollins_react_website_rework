@@ -30,8 +30,8 @@ const Accordion = withStyles({
 
   const AccordionSummary = withStyles({
     root: {
-      backgroundColor: 'rgba(59, 46, 46, .85)',
-      borderBottom: '1px solid rgba(0, 0, 0, .125)',
+      backgroundColor: 'rgba(59, 46, 46)',
+      borderBottom: '1px solid white',
       marginBottom: -1,
       minHeight: 56,
       '&$expanded': {
@@ -125,7 +125,7 @@ const Accordion = withStyles({
             } else if (music.single_song.song.file_type === 'youtube') {
               return YouTube(music.single_song.song);
             }
-        }
+      }
       return ('');
     })
 
@@ -160,6 +160,10 @@ const Accordion = withStyles({
             setPianoHarpsichord(group.music);
           }
         })
+        const url = window.location.href.split('#');
+        if (url.length > 1 && url[1] === 'thumbelina') {
+          setExpanded(true ? 'panel4' : false);
+        }
       });
     }, []);
 
@@ -167,8 +171,10 @@ const Accordion = withStyles({
       <>
       {pageData.page_header ? (
       <div className="RecordingsOriginal fade-in">
+        <div className="header-container">
           {pageData.page_header ? (<h1>{pageData.page_header}</h1>) : ('')}
           {pageData.page_content ? (<div className="newText text-left" dangerouslySetInnerHTML={{__html: pageData.page_content}}></div>) : ('')}
+        </div>
           <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <h2>Electronic &amp; Pop</h2>

@@ -36,3 +36,11 @@
 .newText hr:last-child {
     display: none;
 }
+
+.MuiAccordion-root:last-of-type, #panel5d-content>.MuiAccordionDetails-root {
+    border-radius: 0 0 10px 10px;
+}
+
+#panel5d-header[aria-expanded="false"] {
+    border-radius: 0 0 10px 10px;
+}

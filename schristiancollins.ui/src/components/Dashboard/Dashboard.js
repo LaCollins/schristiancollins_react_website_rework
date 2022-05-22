@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#000000',
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(0),
+    marginLeft: theme.spacing(0),
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -218,25 +219,60 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="About Virtual Instruments" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem 
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/generaluser"
+                  className={classes.nested}>
                   <ListItemText primary="GeneralUser GS" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/guitarandbass"
+                  className={classes.nested}>
                   <ListItemText primary="Guitar &amp; Bass" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/orchestral"
+                  className={classes.nested}>
                   <ListItemText primary="Orchestral" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/percussion"
+                  className={classes.nested}>
                   <ListItemText primary="Percussion" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/virtue"
+                  className={classes.nested}>
                   <ListItemText primary="Virtue" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/misc"
+                  className={classes.nested}>
                   <ListItemText primary="Miscellaneous" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
+                  to="/obsolete"
+                  className={classes.nested}>
                   <ListItemText primary="Obsolete" />
                 </ListItem>
               </List>
@@ -244,7 +280,7 @@ function Dashboard(props) {
               <List classes={{ root: classes.smallSocials }} className="socials small-socials">
                 <ListItem>
                   <div className="tinySocials d-flex row-wrap">
-                    <a href="mailto:s_chriscollins@hotmail.com" className="mr-3"><MailIcon /></a>
+                    <a component={Link} href="/contact" className="mr-3"><MailIcon /></a>
                     <a href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noopener noreferrer">
                     <img src={yt} alt="youtube" className="mr-3" /></a>
                     <a href="https://schristiancollins.wordpress.com/" target="_blank" rel="noopener noreferrer">
@@ -262,7 +298,7 @@ function Dashboard(props) {
             <div className="socials large-socials">
               <Divider classes={{root: classes.dividerColor}} />
               <List classes={{ root: classes.socials }}>
-                <ListItemLink href="mailto:s_chriscollins@hotmail.com">
+                <ListItemLink href="/contact">
                   <MailIcon className="mr-2" /><ListItemText primary="Contact"></ListItemText></ListItemLink>
                 <ListItemLink href="https://www.youtube.com/user/SChrisCollins" target="_blank" rel="noopener noreferrer">
                   <img src={yt} alt="youtube" className="mr-2" /><ListItemText primary="YouTube"></ListItemText>

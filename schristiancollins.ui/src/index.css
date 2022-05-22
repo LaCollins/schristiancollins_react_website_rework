@@ -1,13 +1,27 @@
-@import url(//db.onlinewebfonts.com/c/47f9ef1694f83081f3916f938915af8d?family=Linux+Biolinum);
+/* FONTS */
 
-@font-face {font-family: "Linux";
-           src: url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.eot");
-           src: url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.eot?#iefix")
-           format("embedded-opentype"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.woff2")
-           format("woff2"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.woff")
-           format("woff"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.ttf")
-           format("truetype"), url("//db.onlinewebfonts.com/t/47f9ef1694f83081f3916f938915af8d.svg#Linux Biolinum")
-           format("svg"); }
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: local('Linux Biolinum'),
+       url('./fonts/LinBiolinum_R.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: local('Linux Biolinum'),
+       url('./fonts/LinBiolinum_RI.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: local('Linux Biolinum'),
+       url('./fonts/LinBiolinum_RB.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 html {
   width: 100vw;
@@ -15,9 +29,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Linux Biolinum, Arial, Liberation Sans, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -28,13 +40,12 @@ body {
   -o-background-size: cover;
   background-size: cover;
 
-  font-family: 'Linux' !important;
+  font-family: Linux Biolinum !important;
   overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Linux Biolinum, Arial, Liberation Sans, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 600px) {
@@ -101,6 +112,9 @@ a:active {
   background-color: rgb(59, 46, 46, .6);
   border-radius: 10px;
   border: darkgray solid 1px;
+}
+
+.header-container {
   padding: 25px;
 }
 

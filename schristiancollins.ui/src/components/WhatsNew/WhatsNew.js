@@ -17,7 +17,7 @@ function WhatsNew() {
   return(
     <>
     {news.length ? (
-      <div className="WhatsNew fade-in">
+      <div className="WhatsNew fade-in header-container">
         <h1>What's New</h1>
           {news.map((item) => (
           <div className="text-left newText" key={item.news_date}>
