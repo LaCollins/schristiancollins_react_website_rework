@@ -34,6 +34,7 @@ export default function Routes() {
         <Route path="/misc" component={Misc} />
         <Route path="/obsolete" component={Obsolete} />
         <Route path="/contact" component={ContactForm} />
+        <Route path="/generaluser.php" component={AboutGeneralUserGS} />
       </Switch>
     );
   }
