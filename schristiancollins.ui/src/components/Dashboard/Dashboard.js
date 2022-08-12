@@ -255,6 +255,14 @@ function Dashboard(props) {
                   button
                   onClick={closeDrawer}
                   component={Link}
+                  to="/synfonia"
+                  className={classes.nested}>
+                  <ListItemText primary="Synfonia" />
+                </ListItem>
+                <ListItem
+                  button
+                  onClick={closeDrawer}
+                  component={Link}
                   to="/virtue"
                   className={classes.nested}>
                   <ListItemText primary="Virtue" />
@@ -267,14 +275,14 @@ function Dashboard(props) {
                   className={classes.nested}>
                   <ListItemText primary="Miscellaneous" />
                 </ListItem>
-                <ListItem
+                {/* <ListItem
                   button
                   onClick={closeDrawer}
                   component={Link}
                   to="/obsolete"
                   className={classes.nested}>
                   <ListItemText primary="Obsolete" />
-                </ListItem>
+                </ListItem> */}
               </List>
             </Collapse>
               <List classes={{ root: classes.smallSocials }} className="socials small-socials">

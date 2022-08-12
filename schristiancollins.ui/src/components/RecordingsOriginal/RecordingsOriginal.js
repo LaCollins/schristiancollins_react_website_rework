@@ -10,10 +10,12 @@ import YouTube from '../../helpers/songStyles/YouTube';
 import Collection from '../../helpers/songStyles/Collection';
 
 import { getRecordingsOriginal } from '../../helpers/data/musicData';
+import { nominalTypeHack } from 'prop-types';
 
 const Accordion = withStyles({
     root: {
-      border: '1px solid rgba(0, 0, 0, .125)',
+      backgroundColor: 'rgba(0, 0, 0, .0)',
+      border: '1px solid white',
       boxShadow: 'none',
       '&:not(:last-child)': {
         borderBottom: 0,
@@ -49,7 +51,7 @@ const Accordion = withStyles({
   const AccordionDetails = withStyles((theme) => ({
     root: {
       padding: theme.spacing(2),
-      backgroundColor: 'rgba(59, 46, 46, .90)',
+      backgroundColor: 'rgba(59, 46, 46, .60)',
       color: 'white',
     },
   }))(MuiAccordionDetails);
@@ -175,7 +177,7 @@ const Accordion = withStyles({
           {pageData.page_header ? (<h1>{pageData.page_header}</h1>) : ('')}
           {pageData.page_content ? (<div className="newText text-left" dangerouslySetInnerHTML={{__html: pageData.page_content}}></div>) : ('')}
         </div>
-          <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+          <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')} id="primaryAccordion">
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <h2>Electronic &amp; Pop</h2>
             </AccordionSummary>

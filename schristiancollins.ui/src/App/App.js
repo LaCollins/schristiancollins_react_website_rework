@@ -9,9 +9,13 @@ function App() {
     typography: {
       fontFamily: [
         'Linux Biolinum',
-      ],
+      ]
     }
   });
+
+  theme.typography.body1 = {
+    fontSize: '1.1rem',
+  }
 
   return (
     <React.Fragment>

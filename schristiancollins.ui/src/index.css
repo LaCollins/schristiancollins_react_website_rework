@@ -39,8 +39,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  
   font-family: Linux Biolinum !important;
+  font-size: 1.1rem !important;
   overflow-x: hidden;
 }
 
@@ -56,22 +57,22 @@ code {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 h2 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   color: #eba6a6;
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1rem;
   color: #ffffff;
   font-style: italic;
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 a:link {
@@ -101,7 +102,7 @@ a:active {
 }
 
 .download {
-  font-size:0.90em;
+  font-size: 1rem;
   color:#b0c0e9;
 }
 
@@ -109,13 +110,11 @@ a:active {
   margin-top: 125px;
   color: white;
   text-align: center;
-  background-color: rgb(59, 46, 46, .6);
-  border-radius: 10px;
-  border: darkgray solid 1px;
 }
 
 .header-container {
-  padding: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 
 .newText a:link {
@@ -139,9 +138,10 @@ a:active {
 }
 
 
+
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .WhatsNew, .Talents, .RecordingsOriginal, .Home {
-    width: 90%;
+    width: 100%;
     margin-left: 75px;
 }
 }

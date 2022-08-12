@@ -13,8 +13,10 @@ import Orchestral from '../components/VirtualInstruments/Orchestral/Orchestral';
 import Percussion from '../components/VirtualInstruments/Percussion/Percussion';
 import Virtue from '../components/VirtualInstruments/Virtue/Virtue';
 import Misc from '../components/VirtualInstruments/Misc/Misc';
-import Obsolete from '../components/VirtualInstruments/Obsolete/Obsolete';
+import Synfonia from '../components/VirtualInstruments/Synfonia/Synfonia';
+// import Obsolete from '../components/VirtualInstruments/Obsolete/Obsolete';
 import ContactForm from '../components/Contact/Contact';
+import PageNotFound from '../components/404Page/404Page';
 
 export default function Routes() {
     return (
@@ -29,12 +31,16 @@ export default function Routes() {
         <Route path="/generaluser" component={AboutGeneralUserGS} />
         <Route path="/guitarandbass" component={GuitarAndBass} />
         <Route path="/orchestral" component={Orchestral} />
+        <Route path="/vi-orchestra.php" component={Orchestral} />
         <Route path="/percussion" component={Percussion} />
+        <Route path="/vi-percussion.php" component={Percussion} />
         <Route path="/virtue" component={Virtue} />
+        <Route path="/synfonia" component={Synfonia} />
         <Route path="/misc" component={Misc} />
-        <Route path="/obsolete" component={Obsolete} />
+        {/* <Route path="/obsolete" component={Obsolete} /> */}
         <Route path="/contact" component={ContactForm} />
         <Route path="/generaluser.php" component={AboutGeneralUserGS} />
+        <Route component={PageNotFound} />
       </Switch>
     );
   }

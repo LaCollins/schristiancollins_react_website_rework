@@ -135,6 +135,18 @@ const getObsolete = () =>
         .catch((err) => reject(err))
 })
 
+const getSynfonia = () =>
+  new Promise((resolve, reject) => {
+    axios
+        .get(`${wpUrl}/pages/290`)
+        .then((res) => {
+        const pageObj = res.data.acf;
+
+        resolve(pageObj)
+        })
+        .catch((err) => reject(err))
+})
+
 export {
     getRecordingsOriginal,
     getRecordingsOther,
@@ -147,4 +159,5 @@ export {
     getVirtue,
     getMisc,
     getObsolete,
+    getSynfonia,
 };

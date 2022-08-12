@@ -44,3 +44,9 @@
 #panel5d-header[aria-expanded="false"] {
     border-radius: 0 0 10px 10px;
 }
+
+
+
+.MuiAccordion-root:first-of-type, #panel1d-header[aria-expanded="false"], #panel1d-header, #primaryAccordion {
+    border-radius: 10px 10px 0 0;
+}
